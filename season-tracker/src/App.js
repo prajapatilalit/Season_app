@@ -16,7 +16,9 @@ class App extends Component {
     );
   }
 
-  render() {
+  //Helper function
+
+  renderContents = () => {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>;
     }
@@ -26,6 +28,10 @@ class App extends Component {
     }
 
     return <Loader message="Please allow location request" />;
+  };
+
+  render() {
+    return <div className="border">{this.renderContents()}</div>;
   }
 }
 
