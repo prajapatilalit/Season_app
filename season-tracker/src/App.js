@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Loader from "./Loader";
 import SeasonDisplay from "./SeasonDisplay";
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
       return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <div>Loading!</div>;
+    return <Loader message="Please allow location request" />;
   }
 }
 
